@@ -1,5 +1,5 @@
 # Bookings and Reservations
-This is the repository for my bookins and reservations project.
+This is the repository for my Bookings and Reservations project.
 - Built in Go Version 1.20
 - Using the [chi router](https://github.com/go-chi/chi/)
 - Uses the Alex Edwards SCS Session Management
