@@ -13,7 +13,7 @@ import (
 )
 
 // web based application for "Hello World!"
-const portNumber = ":8081"
+const portNumber = ":8080"
 
 var app config.AppConfig
 var session *scs.SessionManager
