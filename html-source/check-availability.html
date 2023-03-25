@@ -11,6 +11,7 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.1/dist/css/datepicker-bs4.min.css">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.css">
 
   <style>
     .my-footer {
@@ -27,9 +28,9 @@
       max-width: 50%;
     }
 
-.notie-container{
-  box-shadow: #FFFFFF;
-}
+    .notie-container {
+      box-shadow: #FFFFFF;
+    }
 
     .redText {
       color: red;
@@ -164,8 +165,9 @@
     integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.1/dist/js/datepicker-full.min.js"></script>
-
   <script src="https://unpkg.com/notie"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.min.js"></script>
   <script>
     console.log("I am printing from a javascipt.");
 
@@ -190,7 +192,8 @@
     })();
 
     document.getElementById("colorButton").addEventListener("click", function () {
-      notify("this is my message", "error")
+      // notify("this is my message", "error")
+      notifyModal("Error Modal", "<em>Nothing Available</em>", "error", "Try Again")
     })
 
     const elem = document.getElementById('reservation-dates');
@@ -205,7 +208,16 @@
         text: msg,
       })
     }
+    //Sweetie modal alerts for the reservatios
 
+    function notifyModal(title, text, icon, confirmationButtonText) {
+      Swal.fire({
+        title: title,
+        html: text,
+        icon: icon,
+        confirmButtonText: confirmationButtonText
+      })
+    }
   </script>
 
 </body>
