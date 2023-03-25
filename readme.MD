@@ -4,3 +4,4 @@ This is the repository for my Bookings and Reservations project.
 - Using the [chi router v5](https://github.com/go-chi/chi/)
 - Uses the Alex Edwards SCS Session Management
 - Uses the Justinas Stankevičius [nosurf v2](https://github.com/alexedwards/scs/v2)
+- Uses the Jared Reich [notie](https://github.com/jaredreich/notie) notification 
