@@ -8,4 +8,4 @@ This is the repository for my Bookings and Reservations project.
 - Uses the SweetAlert2 [sweetalert2 v10](https://sweetalert2.github.io/v10.html) modal alerts
 
 
-copyright Big Idea Labs @ 2023
+Copyright Big Idea Labs @2023
