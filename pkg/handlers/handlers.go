@@ -1,10 +1,11 @@
 package handlers
 
 import (
+	"net/http"
+
 	"github.com/gdalelio/bookings/pkg/config"
 	"github.com/gdalelio/bookings/pkg/models"
 	"github.com/gdalelio/bookings/pkg/render"
-	"net/http"
 )
 
 // Repo the repository used by the handlers
@@ -37,14 +38,54 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 
 // About is the about page handler
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
-	stringMap := make(map[string]string)
+	/* stringMap := make(map[string]string)
 	stringMap["test"] = "Hello Again"
 
 	remoteIP := m.App.Session.GetString(r.Context(), "remote_ip")
-	stringMap["remote_ip"] = remoteIP
+	stringMap["remote_ip"] = remoteIP */
 
 	//send the data to the template
 	render.RenderTemplate(w, "about.page.tmpl", &models.TemplateData{
-		StringMap: stringMap,
+		//StringMap: stringMap,
 	})
+}
+
+// Generals is the room page handler
+func (m *Repository) Generals(w http.ResponseWriter, r *http.Request) {
+	remoteIP := r.RemoteAddr
+	m.App.Session.Put(r.Context(), "remote_ip", remoteIP)
+
+	render.RenderTemplate(w, "generals.page.tmpl", &models.TemplateData{})
+}
+
+// Majors is the room page handler
+func (m *Repository) Majors(w http.ResponseWriter, r *http.Request) {
+	remoteIP := r.RemoteAddr
+	m.App.Session.Put(r.Context(), "remote_ip", remoteIP)
+
+	render.RenderTemplate(w, "majors.page.tmpl", &models.TemplateData{})
+}
+
+// CheckAvailability is the check availability page handler
+func (m *Repository) Availability(w http.ResponseWriter, r *http.Request) {
+	remoteIP := r.RemoteAddr
+	m.App.Session.Put(r.Context(), "remote_ip", remoteIP)
+
+	render.RenderTemplate(w, "check-availability.page.tmpl", &models.TemplateData{})
+}
+
+// Reservation is the check availability page handler
+func (m *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
+	remoteIP := r.RemoteAddr
+	m.App.Session.Put(r.Context(), "remote_ip", remoteIP)
+
+	render.RenderTemplate(w, "reservations.page.tmpl", &models.TemplateData{})
+}
+
+// Reservation is the check availability page handler
+func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
+	remoteIP := r.RemoteAddr
+	m.App.Session.Put(r.Context(), "remote_ip", remoteIP)
+
+	render.RenderTemplate(w, "contact.page.tmpl", &models.TemplateData{})
 }
